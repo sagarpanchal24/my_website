@@ -38,13 +38,9 @@ min-height: 100vh;
 margin: 0;
 
 /* Background with Thin Vertical Lines */
-    /*background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
-    background-size: 1.5in 100%; */
-
-    /* Responsive Background with Thin Vertical Lines */
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
     background-size: 1.5in 100%;
-    background-size: calc(100% / 8) 100%; /* Adjust for 8 lines */
+    /*calc(100% / 8) 100%*/
 
 }
 
