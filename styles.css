@@ -1,201 +1,57 @@
 /* Global Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
 }
 
 /* Blinking Animation */
 @keyframes blink {
-    0%, 50%, 100% {
-        opacity: 1;
-    }
-    25%, 75% {
-        opacity: 0.4;
-    }
+0%, 50%, 100% {
+opacity: 1;
+}
+25%, 75% {
+opacity: 0.4;
+}
 }
 
 /* Radial Waves Animation */
 @keyframes waves {
-    0% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0.8;
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(2);
-        opacity: 0;
-    }
+0% {
+transform: translate(-50%, -50%) scale(1);
+opacity: 0.8;
+}
+100% {
+transform: translate(-50%, -50%) scale(2);
+opacity: 0;
+}
 }
 
 body {
-    font-family: "Arial", sans-serif;
-    color: #000;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 100vh;
-    margin: 0;
+font-family: "Arial", sans-serif;
+color: #000;
+background-color: #fff;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+min-height: 100vh;
+margin: 0;
 
-    /* Background with Thin Vertical Lines */
+/* Background with Thin Vertical Lines */
     /*background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
     background-size: 1.5in 100%; */
 
     /* Responsive Background with Thin Vertical Lines */
-    /*background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 1.5in 100%;
     background-size: calc(100% / 8) 100%; /* Adjust for 8 lines */
 
 }
 
 /* Header */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    width: 100%;
-}
-
-.header .logo img {
-    max-width: 100%;  /* Ensure the image is responsive */
-    height: auto;     /* Maintain aspect ratio */
-    width: 50px;      /* Set a specific width if needed */
-    /* You can adjust width and height to fit your design */
-}
-
-
+@@ -174,4 +179,4 @@
 .menu-icon {
-    font-size: 24px;
-    cursor: pointer;
+font-size: 2
 }
-
-/* Main Content */
-.main-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    flex: 1;
 }
-
-.name {
-    font-size: 10rem;
-    font-weight: bold;
-    line-height: 0.9;
-    position: relative;
-    display: inline-block;
-}
-
-.horizontal-subtitle {
-    display: block;
-    font-size: 1.2rem;
-    font-weight: lighter;
-    color: #888;
-    margin: 10px 0;
-}
-
-/* .horizontal-subtitle {
-    display: block;
-    font-size: 1.4rem;
-    font-weight: lighter;
-    color: #888;
-    margin: 10px 0;
-    font-family: 'Kaushan Script', cursive;
-} */
-
-
-.last-name {
-    display: block;
-}
-
-/* Footer */
-.footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding: 20px;
-    width: 100%;
-}
-
-.availability {
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-.status {
-    display: flex;
-    align-items: center; /* Align dot and text vertically */
-    gap: 8px; /* Add spacing between the dot and the text */
-    font-size: 0.9rem; /* Adjust font size to match design */
-    color: #f90; /* Ensure text color is consistent */
-    position: relative; /* Retain for wave animation */
-}
-
-.status::before {
-    content: '';
-    width: 10px;
-    height: 10px;
-    background-color: #f90; /* Bright yellow dot */
-    border-radius: 50%; /* Make it circular */
-    /*animation: blink 4.0s infinite; /* Keep the blinking animation */
-}
-
-.status::after {
-    content: '';
-    position: absolute;
-    top: 50.0%;
-    left: 3.2%;
-    width: 12px;
-    height: 12px;
-    background-color: rgba(255, 153, 0, 0.5); /* Semi-transparent wave */
-    border-radius: 50%; /* Make it circular */
-    transform: translate(-50%, -50%) scale(1);
-    animation: waves 2.0s infinite ease-out; /* Keep the radial wave animation */
-}
-
-
-.nominee {
-    writing-mode: vertical-rl;
-    text-align: center;
-}
-
-.nominee-box {
-    font-size: 1.4rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    line-height: 1.5;
-}
-
-/* Container to hold the background */
-.background-container {
-    width: 100%;             /* Full width of the screen */
-    height: 100vh;           /* Full height of the viewport */
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
-    background-size: calc(100% / 8) 100%;  /* Create 8 lines distributed evenly */
-    background-position: center center;  /* Center the background */
-    display: flex;
-    justify-content: center; /* Center content horizontally */
-    align-items: center;     /* Center content vertically */
-}
-
-/* Optional styling for content inside the background */
-.background-container > * {
-    position: relative;  /* Make sure content stays above the background */
-    z-index: 1;          /* Ensures content is not hidden behind the background */
-}
-
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .name {
-        font-size: 4rem;
-    }
-
-    .horizontal-subtitle {
-        font-size: 1rem;
-    }
-
-    .menu-icon {
-        font-size: 2
-    }
 }
