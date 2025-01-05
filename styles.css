@@ -54,8 +54,8 @@ body {
 
     /* For small mobile screens, reduce the line thickness more */
     @media (max-width: 600px) {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) max(1px, calc(0.3vw)), transparent max(1px, calc(0.3vw)));
-    background-size: 15vw 100%; /* Increase line spacing */
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) max(1px, calc(0.3vw)), transparent 0.8px);
+    background-size: 20vw 100%; /* Increase line spacing */
     }
 
 }
