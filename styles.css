@@ -41,9 +41,29 @@ body {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
     background-size: 1.5in 100%;*/
 
+    
     /* Responsive Background with Thin Vertical Lines */
+    /*
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
     background-size: 10vw 100%;
+    */
+
+    /* Default background with responsive lines */
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) calc(1px + 0.5vw), transparent calc(1px + 0.5vw));
+    background-size: 10vw 100%;
+
+    /* Larger screens: Adjust the line thickness */
+    @media (min-width: 1200px) {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) calc(1px + 1vw), transparent calc(1px + 1vw));
+    background-size: 5vw 100%; /* Change line spacing */
+    }
+
+    /* Smaller screens: Reduce line thickness */
+    @media (max-width: 600px) {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) calc(1px + 0.2vw), transparent calc(1px + 0.2vw));
+    background-size: 15vw 100%; /* Increase line spacing */
+    }
+
 
 }
 
