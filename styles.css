@@ -49,7 +49,7 @@ body {
     */
 
     /* Default for larger screens (1px maximum) */
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
     background-size: 10vw 100%;
 
     /* For small mobile screens, reduce the line thickness more */
