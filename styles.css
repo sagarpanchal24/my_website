@@ -43,7 +43,7 @@ body {
 
     /* Responsive Background with Thin Vertical Lines */
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
-    background-size: calc(100% / 8) 100%; /* Adjust for 8 lines */
+    background-size: 10vw 100%;
 
 }
 
