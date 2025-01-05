@@ -166,6 +166,25 @@ body {
     line-height: 1.5;
 }
 
+/* Container to hold the background */
+.background-container {
+    width: 100%;             /* Full width of the screen */
+    height: 100vh;           /* Full height of the viewport */
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: calc(100% / 8) 100%;  /* Create 8 lines distributed evenly */
+    background-position: center center;  /* Center the background */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center;     /* Center content vertically */
+}
+
+/* Optional styling for content inside the background */
+.background-container > * {
+    position: relative;  /* Make sure content stays above the background */
+    z-index: 1;          /* Ensures content is not hidden behind the background */
+}
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .name {
