@@ -95,6 +95,25 @@
             }
         });
 
+        // Variables for swipe refresh
+        let touchStartY = 0;
+        let touchEndY = 0;
+
+        // Detect touch start
+        document.addEventListener('touchstart', (e) => {
+            touchStartY = e.touches[0].clientY;
+        });
+
+        // Detect touch end
+        document.addEventListener('touchend', (e) => {
+            touchEndY = e.changedTouches[0].clientY;
+
+            // Refresh page if swiping down on the first page
+            if (currentPage === 0 && touchEndY - touchStartY > 100) {
+                location.reload(); // Refresh the page
+            }
+        });
+
 
     </script>
     

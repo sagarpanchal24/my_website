@@ -320,10 +320,11 @@ body {
 
     /* Footer */
     .footer {
-        position: fixed; /* Fix it at the bottom of the viewport */
-        bottom: 0; /* Stay within the screen */
+        position: fixed; /* Fixed at the bottom of the viewport */
+        bottom: 0; /* Ensure it stays within the screen */
+        width: 100%;
         padding: 3%; /* Smaller padding for mobile */
-        font-size: 3vw; /* Proportional font size */
+        font-size: 3vw; /* Scalable font size */
     }
     
 }
@@ -348,5 +349,13 @@ body {
     .profile-picture {
         width: 50vw;
         height: 50vw;
+    }
+
+    .footer {
+        position: fixed; /* Fixed at the bottom of the viewport */
+        bottom: 0; /* Ensure it stays within the screen */
+        width: 100%;
+        padding: 3%; /* Smaller padding for mobile */
+        font-size: 3vw; /* Scalable font size */
     }
 }
