@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-/* Blinking Animation */
+/* Animations */
 @keyframes blink {
     0%, 50%, 100% {
         opacity: 1;
@@ -15,7 +15,6 @@
     }
 }
 
-/* Radial Waves Animation */
 @keyframes waves {
     0% {
         transform: translate(-50%, -50%) scale(1);
@@ -27,6 +26,7 @@
     }
 }
 
+/* Body */
 body {
     font-family: Arial, sans-serif;
     scroll-behavior: smooth;
@@ -43,42 +43,12 @@ body {
     justify-content: space-between;
     min-height: 100vh;
     margin: 0;
-
-    /* Background with Thin Vertical Lines 
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
-    background-size: 1.5in 100%;*/
-
-    
-    /* Responsive Background with Thin Vertical Lines */
-    /*
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
     background-size: 10vw 100%;
-    */
-
-    /* Default for larger screens (1px maximum) */
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
-    background-size: 10vw 100%;
-
-    /* For small mobile screens, reduce the line thickness more */
-    @media (max-width: 600px) {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) max(1px, calc(0.3vw)), transparent 0.8px);
-    background-size: 20vw 100%; /* Increase line spacing */
-}
 }
 
-/* Page 1 */
-.page1 {
+.page1, .page2 {
     background-color: #f4f4f4;
-}
-
-/* Page 2 */
-.page2 {
-    background-color: #f4f4f4;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px;
 }
 
 /* Header */
@@ -91,10 +61,9 @@ body {
 }
 
 .header .logo img {
-    max-width: 100%;  /* Ensure the image is responsive */
-    height: auto;     /* Maintain aspect ratio */
-    width: 50px;      /* Set a specific width if needed */
-    /* You can adjust width and height to fit your design */
+    max-width: 100%;
+    height: auto;
+    width: 50px;
 }
 
 .menu-icon {
@@ -145,65 +114,6 @@ body {
     line-height: 1.5;
 }
 
-.status {
-    display: flex;
-    align-items: center; /* Align dot and text vertically */
-    gap: 8px; /* Add spacing between the dot and the text */
-    font-size: 0.9rem; /* Adjust font size to match design */
-    color: #f90; /* Ensure text color is consistent */
-    position: relative; /* Retain for wave animation */
-}
-
-.status::before {
-    content: '';
-    width: 10px;
-    height: 10px;
-    background-color: #f90; /* Bright yellow dot */
-    border-radius: 50%; /* Make it circular */
-    /*animation: blink 4.0s infinite; /* Keep the blinking animation */
-}
-
-.status::after {
-    content: '';
-    position: absolute;
-    top: 50.0%;
-    left: 3.2%;
-    width: 12px;
-    height: 12px;
-    background-color: rgba(255, 153, 0, 0.5); /* Semi-transparent wave */
-    border-radius: 50%; /* Make it circular */
-    transform: translate(-50%, -50%) scale(1);
-    animation: waves 2.0s infinite ease-out; /* Keep the radial wave animation */
-}
-
-
-.nominee {
-    writing-mode: vertical-rl;
-    text-align: center;
-}
-
-.nominee-box {
-    font-size: 1.4rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    line-height: 1.5;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .name {
-        font-size: 4rem;
-    }
-
-    .horizontal-subtitle {
-        font-size: 1rem;
-    }
-
-    .menu-icon {
-        font-size: 2
-    }
-}
-
 /* Page 2 Content */
 .content {
     display: flex;
@@ -249,4 +159,84 @@ body {
 /* Page Transition Animation */
 .page {
     transition: transform 0.5s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* General Adjustments */
+    .page {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    /* Header */
+    .header {
+        padding: 10px;
+    }
+
+    .header .logo img {
+        width: 40px;
+    }
+
+    .menu-icon {
+        font-size: 20px;
+    }
+
+    /* Page 1 Adjustments */
+    .name {
+        font-size: 4rem; /* Smaller font size */
+    }
+
+    .horizontal-subtitle {
+        font-size: 1rem; /* Adjust subtitle size */
+    }
+
+    /* Page 2 Adjustments */
+    .content {
+        flex-direction: column; /* Stack vertically */
+        gap: 20px;
+    }
+
+    .text-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .text-section p {
+        font-size: 1rem;
+    }
+
+    .profile-picture {
+        width: 200px; /* Smaller profile picture */
+        height: 200px;
+    }
+
+    /* Footer */
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .name {
+        font-size: 3rem;
+    }
+
+    .horizontal-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .text-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .text-section p {
+        font-size: 0.9rem;
+    }
+
+    .profile-picture {
+        width: 150px;
+        height: 150px;
+    }
 }
