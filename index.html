@@ -3,44 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sagar Panchal</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header">
-        <div class="logo">
-            <img src="images/logo.png" alt="Logo" />
-        </div>
-        <div class="menu-icon">☰</div>
-    </header>
-
-    <main class="main-content">
-        <div class="center-text">
-            <h1 class="name">
-                SAGAR
-                <span class="horizontal-subtitle">Aerospace Engineer and Design Explorer</span>
-                <span class="last-name">PANCHAL</span>
-            </h1>
-        </div>
-    </main>
-
-    <footer class="footer">
-        <div class="availability">
-            <p>Freelancer Availability</p>
-            <span class="status">Aalen, Germany</span>
-        </div>
-        <!-- <div class="nominee">
-            <div class="nominee-box">
-                <p>W.</p>
-                <p>Nominee</p>
+    <!-- Page 1 -->
+    <section class="page page1">
+        <header class="header">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo" />
             </div>
-        </div> -->
-    </footer>
+            <div class="menu-icon">☰</div>
+        </header>
+
+        <main class="main-content">
+            <div class="center-text">
+                <h1 class="name">
+                    SAGAR
+                    <span class="horizontal-subtitle">Aerospace Engineer and Design Explorer</span>
+                    <span class="last-name">PANCHAL</span>
+                </h1>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="availability">
+                <p>Freelancer Availability</p>
+                <span class="status">Aalen, Germany</span>
+            </div>
+        </footer>
+    </section>
+
+    <!-- Page 2 -->
+    <section class="page page2">
+        <div class="content">
+            <div class="text-section">
+                <h2 class="message-header">About Me</h2>
+                <p>Welcome to my profile. I am an Aerospace Engineer,</p>
+                <p>passionate about design and technology.</p>
+                <p>Exploring ideas to create meaningful experiences.</p>
+                <p>Let’s innovate and shape the future together.</p>
+            </div>
+            <div class="image-section">
+                <img src="images/profile.png" alt="Profile Picture" class="profile-picture">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let currentPage = 0;
+        const pages = document.querySelectorAll('.page');
+
+        document.addEventListener('wheel', (e) => {
+            if (e.deltaY > 0 && currentPage < pages.length - 1) {
+                currentPage++;
+            } else if (e.deltaY < 0 && currentPage > 0) {
+                currentPage--;
+            }
+            pages[currentPage].scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
 </body>
-
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
-
 </html>

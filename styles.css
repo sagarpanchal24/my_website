@@ -28,6 +28,13 @@
 }
 
 body {
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+    overflow: hidden;
+}
+
+/* Common Page Styles */
+.page {
     font-family: "Arial", sans-serif;
     color: #000;
     background-color: #fff;
@@ -56,8 +63,22 @@ body {
     @media (max-width: 600px) {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) max(1px, calc(0.3vw)), transparent 0.8px);
     background-size: 20vw 100%; /* Increase line spacing */
-    }
+}
+}
 
+/* Page 1 */
+.page1 {
+    background-color: #f4f4f4;
+}
+
+/* Page 2 */
+.page2 {
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
 }
 
 /* Header */
@@ -76,13 +97,12 @@ body {
     /* You can adjust width and height to fit your design */
 }
 
-
 .menu-icon {
     font-size: 24px;
     cursor: pointer;
 }
 
-/* Main Content */
+/* Page 1 Main Content */
 .main-content {
     display: flex;
     align-items: center;
@@ -106,16 +126,6 @@ body {
     color: #888;
     margin: 10px 0;
 }
-
-/* .horizontal-subtitle {
-    display: block;
-    font-size: 1.4rem;
-    font-weight: lighter;
-    color: #888;
-    margin: 10px 0;
-    font-family: 'Kaushan Script', cursive;
-} */
-
 
 .last-name {
     display: block;
@@ -192,4 +202,51 @@ body {
     .menu-icon {
         font-size: 2
     }
+}
+
+/* Page 2 Content */
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    width: 80%;
+}
+
+/* Text Section */
+.text-section {
+    text-align: left;
+    flex: 1;
+}
+
+.text-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.text-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 5px 0;
+}
+
+/* Image Section */
+.image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-picture {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Page Transition Animation */
+.page {
+    transition: transform 0.5s ease-in-out;
 }
