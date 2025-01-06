@@ -54,7 +54,7 @@
         let currentPage = 0;
         const pages = document.querySelectorAll('.page');
 
-        // Smooth Scroll Function
+        // Function to scroll smoothly to the desired page
         function scrollToPage(index) {
             if (index >= 0 && index < pages.length) {
                 currentPage = index;
@@ -62,57 +62,44 @@
             }
         }
 
-        // Desktop Scroll (Wheel or Trackpad)
+        // ----------- SCROLLING FOR DESKTOP (Mouse Wheel or Trackpad) -----------
         let scrollTimeout;
         document.addEventListener('wheel', (e) => {
-            clearTimeout(scrollTimeout);
+            clearTimeout(scrollTimeout); // Prevent multiple triggers
             scrollTimeout = setTimeout(() => {
                 if (e.deltaY > 0 && currentPage < pages.length - 1) {
                     scrollToPage(currentPage + 1); // Scroll Down
                 } else if (e.deltaY < 0 && currentPage > 0) {
                     scrollToPage(currentPage - 1); // Scroll Up
                 }
-            }, 100); // Debounce to avoid multiple triggers
+            }, 100); // Debounce time
         });
 
-        // Mobile Touch Scroll
+        // ----------- TOUCH SCROLLING FOR MOBILE -----------
         let touchStartY = 0;
         let touchEndY = 0;
 
         document.addEventListener('touchstart', (e) => {
-            touchStartY = e.touches[0].clientY;
+            touchStartY = e.touches[0].clientY; // Capture touch start position
         });
 
         document.addEventListener('touchend', (e) => {
-            touchEndY = e.changedTouches[0].clientY;
+            touchEndY = e.changedTouches[0].clientY; // Capture touch end position
 
-            const touchDifference = touchStartY - touchEndY;
+            const swipeDistance = touchStartY - touchEndY;
 
-            if (touchDifference > 50 && currentPage < pages.length - 1) {
-                scrollToPage(currentPage + 1); // Swipe Up
-            } else if (touchDifference < -50 && currentPage > 0) {
-                scrollToPage(currentPage - 1); // Swipe Down
-            }
-        });
-
-        // Variables for swipe refresh
-        let touchStartY = 0;
-        let touchEndY = 0;
-
-        // Detect touch start
-        document.addEventListener('touchstart', (e) => {
-            touchStartY = e.touches[0].clientY;
-        });
-
-        // Detect touch end
-        document.addEventListener('touchend', (e) => {
-            touchEndY = e.changedTouches[0].clientY;
-
-            // Refresh page if swiping down on the first page
-            if (currentPage === 0 && touchEndY - touchStartY > 100) {
+            // -------- REFRESH LOGIC FOR FIRST PAGE --------
+            if (currentPage === 0 && touchEndY > touchStartY + 100) { // Swipe down detected
                 location.reload(); // Refresh the page
             }
+            // -------- SCROLLING BETWEEN PAGES --------
+            else if (swipeDistance > 50 && currentPage < pages.length - 1) { 
+                scrollToPage(currentPage + 1); // Scroll down
+            } else if (swipeDistance < -50 && currentPage > 0) {
+                scrollToPage(currentPage - 1); // Scroll up
+            }
         });
+
 
 
     </script>
