@@ -344,18 +344,16 @@ body {
     }
 
     .text-section h2 {
-        font-size: 04vw;
+        font-size: 11.5vw;
         margin-bottom: 15px;
-        margin-left:10vw;
     }
 
     .text-section p {
-        font-size: 2.5vw;
-        margin-left: 10vw;
+        font-size: 4vw;
         line-height: 1.6;
-        margin: 0 10vw;
+        text-align: center;
         font-weight: lighter;
-        color: #888;
+        color: #606060;
     }
 
     /* Image Section */
@@ -367,8 +365,8 @@ body {
     }
 
     .profile-picture {
-        width: 40vw;
-        height: 40vw;
+        width: 60vw;
+        height: 60vw;
         border-radius: 50%;
         object-fit: cover;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -376,9 +374,6 @@ body {
 
     /* Footer */
     .footer {
-        /*
-        position: fixed; /* Fixed at the bottom of the viewport */
-    
         bottom: 0; /* Ensure it stays within the screen */
         width: 100%;
         padding: 3%; /* Smaller padding for mobile */
