@@ -54,14 +54,49 @@
         let currentPage = 0;
         const pages = document.querySelectorAll('.page');
 
-        document.addEventListener('wheel', (e) => {
-            if (e.deltaY > 0 && currentPage < pages.length - 1) {
-                currentPage++;
-            } else if (e.deltaY < 0 && currentPage > 0) {
-                currentPage--;
+        // Smooth Scroll Function
+        function scrollToPage(index) {
+            if (index >= 0 && index < pages.length) {
+                currentPage = index;
+                pages[currentPage].scrollIntoView({ behavior: 'smooth' });
             }
-            pages[currentPage].scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Desktop Scroll (Wheel or Trackpad)
+        let scrollTimeout;
+        document.addEventListener('wheel', (e) => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                if (e.deltaY > 0 && currentPage < pages.length - 1) {
+                    scrollToPage(currentPage + 1); // Scroll Down
+                } else if (e.deltaY < 0 && currentPage > 0) {
+                    scrollToPage(currentPage - 1); // Scroll Up
+                }
+            }, 100); // Debounce to avoid multiple triggers
         });
+
+        // Mobile Touch Scroll
+        let touchStartY = 0;
+        let touchEndY = 0;
+
+        document.addEventListener('touchstart', (e) => {
+            touchStartY = e.touches[0].clientY;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            touchEndY = e.changedTouches[0].clientY;
+
+            const touchDifference = touchStartY - touchEndY;
+
+            if (touchDifference > 50 && currentPage < pages.length - 1) {
+                scrollToPage(currentPage + 1); // Swipe Up
+            } else if (touchDifference < -50 && currentPage > 0) {
+                scrollToPage(currentPage - 1); // Swipe Down
+            }
+        });
+
+
     </script>
+    
 </body>
 </html>

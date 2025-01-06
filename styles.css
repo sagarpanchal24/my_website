@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-/* Animations */
+/* Blinking Animation */
 @keyframes blink {
     0%, 50%, 100% {
         opacity: 1;
@@ -15,6 +15,7 @@
     }
 }
 
+/* Radial Waves Animation */
 @keyframes waves {
     0% {
         transform: translate(-50%, -50%) scale(1);
@@ -26,7 +27,6 @@
     }
 }
 
-/* Body */
 body {
     font-family: Arial, sans-serif;
     scroll-behavior: smooth;
@@ -43,12 +43,42 @@ body {
     justify-content: space-between;
     min-height: 100vh;
     margin: 0;
+
+    /* Background with Thin Vertical Lines 
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 1.5in 100%;*/
+
+    
+    /* Responsive Background with Thin Vertical Lines */
+    /*
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
     background-size: 10vw 100%;
+    */
+
+    /* Default for larger screens (1px maximum) */
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 10vw 100%;
+
+    /* For small mobile screens, reduce the line thickness more */
+    @media (max-width: 600px) {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) max(1px, calc(0.3vw)), transparent 0.8px);
+    background-size: 20vw 100%; /* Increase line spacing */
+}
 }
 
-.page1, .page2 {
+/* Page 1 */
+.page1 {
     background-color: #f4f4f4;
+}
+
+/* Page 2 */
+.page2 {
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
 }
 
 /* Header */
@@ -61,13 +91,14 @@ body {
 }
 
 .header .logo img {
-    max-width: 100%;
-    height: auto;
-    width: 50px;
+    max-width: 100%;  /* Ensure the image is responsive */
+    height: auto;     /* Maintain aspect ratio */
+    width: 5vw;      /* Set a specific width if needed */
+    /* You can adjust width and height to fit your design */
 }
 
 .menu-icon {
-    font-size: 24px;
+    font-size: 2vw;
     cursor: pointer;
 }
 
@@ -81,7 +112,7 @@ body {
 }
 
 .name {
-    font-size: 10rem;
+    font-size: 11.5vw;
     font-weight: bold;
     line-height: 0.9;
     position: relative;
@@ -90,7 +121,7 @@ body {
 
 .horizontal-subtitle {
     display: block;
-    font-size: 1.2rem;
+    font-size: 1.5vw;
     font-weight: lighter;
     color: #888;
     margin: 10px 0;
@@ -112,6 +143,52 @@ body {
 .availability {
     font-size: 1rem;
     line-height: 1.5;
+}
+
+.status {
+    display: flex;
+    align-items: center; /* Align dot and text vertically */
+    gap: 8px; /* Add spacing between the dot and the text */
+    font-size: 0.9rem; /* Adjust font size to match design */
+    color: #f90; /* Ensure text color is consistent */
+    position: relative; /* Retain for wave animation */
+}
+
+.status::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #f90; /* Bright yellow dot */
+    border-radius: 50%; /* Make it circular */
+    /*animation: blink 4.0s infinite; /* Keep the blinking animation */
+}
+
+.status::after {
+    content: '';
+    position: absolute;
+    top: 50.0%;
+    left: 3.2%;
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 153, 0, 0.5); /* Semi-transparent wave */
+    border-radius: 50%; /* Make it circular */
+    transform: translate(-50%, -50%) scale(1);
+    animation: waves 2.0s infinite ease-out; /* Keep the radial wave animation */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .name {
+        font-size: 4rem;
+    }
+
+    .horizontal-subtitle {
+        font-size: 1rem;
+    }
+
+    .menu-icon {
+        font-size: 2
+    }
 }
 
 /* Page 2 Content */
@@ -191,6 +268,37 @@ body {
         font-size: 1rem; /* Adjust subtitle size */
     }
 
+    .status {
+        display: flex;
+        align-items: center; /* Align dot and text vertically */
+        gap: 8px; /* Add spacing between the dot and the text */
+        font-size: 0.9rem; /* Adjust font size to match design */
+        color: #f90; /* Ensure text color is consistent */
+        position: relative; /* Retain for wave animation */
+    }
+    
+    .status::before {
+        content: '';
+        width: 10px;
+        height: 10px;
+        background-color: #f90; /* Bright yellow dot */
+        border-radius: 50%; /* Make it circular */
+        /*animation: blink 4.0s infinite; /* Keep the blinking animation */
+    }
+    
+    .status::after {
+        content: '';
+        position: absolute;
+        top: 50.0%;
+        left: 3.2%;
+        width: 12px;
+        height: 12px;
+        background-color: rgba(255, 153, 0, 0.5); /* Semi-transparent wave */
+        border-radius: 50%; /* Make it circular */
+        transform: translate(-50%, -50%) scale(1);
+        animation: waves 2.0s infinite ease-out; /* Keep the radial wave animation */
+    }
+
     /* Page 2 Adjustments */
     .content {
         flex-direction: column; /* Stack vertically */
@@ -198,16 +306,16 @@ body {
     }
 
     .text-section h2 {
-        font-size: 1.8rem;
+        font-size: 4vw;
     }
 
     .text-section p {
-        font-size: 1rem;
+        font-size: 2.5vw;
     }
 
     .profile-picture {
-        width: 200px; /* Smaller profile picture */
-        height: 200px;
+        width: 40vw; /* Smaller profile picture */
+        height: 40vw;
     }
 
     /* Footer */
@@ -228,15 +336,15 @@ body {
     }
 
     .text-section h2 {
-        font-size: 1.5rem;
+        font-size: 5vw;
     }
 
     .text-section p {
-        font-size: 0.9rem;
+        font-size: 3vw;
     }
 
     .profile-picture {
-        width: 150px;
-        height: 150px;
+        width: 50vw;
+        height: 50vw;
     }
 }
