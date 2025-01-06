@@ -336,17 +336,42 @@ body {
         gap: 20px;
     }
 
+    /* Text Section */
+    .text-section {
+        text-align: center;
+        align-items: flex-start;
+        flex: 1;
+    }
+
     .text-section h2 {
-        font-size: 4vw;
+        font-size: 04vw;
+        margin-bottom: 15px;
+        margin-left:10vw;
     }
 
     .text-section p {
         font-size: 2.5vw;
+        margin-left: 10vw;
+        line-height: 1.6;
+        margin: 0 10vw;
+        font-weight: lighter;
+        color: #888;
+    }
+
+    /* Image Section */
+    .image-section {
+        flex: 1;
+        display: flex;
+        justify-content: right;
+        align-items: flex-end;
     }
 
     .profile-picture {
-        width: 40vw; /* Smaller profile picture */
+        width: 40vw;
         height: 40vw;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     /* Footer */
