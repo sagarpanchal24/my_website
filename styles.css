@@ -386,34 +386,3 @@ body {
     }
     
 }
-
-@media (max-width: 480px) {
-    .name {
-        font-size: 3rem;
-    }
-
-    .horizontal-subtitle {
-        font-size: 0.9rem;
-    }
-
-    .text-section h2 {
-        font-size: 5vw;
-    }
-
-    .text-section p {
-        font-size: 3vw;
-    }
-
-    .profile-picture {
-        width: 50vw;
-        height: 50vw;
-    }
-
-    .footer {
-        position: fixed; /* Fixed at the bottom of the viewport */
-        bottom: 0; /* Ensure it stays within the screen */
-        width: 100%;
-        padding: 3%; /* Smaller padding for mobile */
-        font-size: 3vw; /* Scalable font size */
-    }
-}
