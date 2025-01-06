@@ -320,10 +320,12 @@ body {
 
     /* Footer */
     .footer {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        position: fixed; /* Fix it at the bottom of the viewport */
+        bottom: 0; /* Stay within the screen */
+        padding: 3%; /* Smaller padding for mobile */
+        font-size: 3vw; /* Proportional font size */
     }
+    
 }
 
 @media (max-width: 480px) {
