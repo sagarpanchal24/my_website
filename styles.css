@@ -178,6 +178,14 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+
+    .main-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex: 1;
+    }
     .name {
         font-size: 4rem;
     }
@@ -264,6 +272,14 @@ body {
         font-size: 4rem; /* Smaller font size */
     }
 
+    .main-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex: 1;
+    }
+
     .horizontal-subtitle {
         font-size: 1rem; /* Adjust subtitle size */
     }
@@ -320,7 +336,9 @@ body {
 
     /* Footer */
     .footer {
+        /*
         position: fixed; /* Fixed at the bottom of the viewport */
+    
         bottom: 0; /* Ensure it stays within the screen */
         width: 100%;
         padding: 3%; /* Smaller padding for mobile */
